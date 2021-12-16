@@ -21,7 +21,7 @@ body{
 <br>
 <br>
 <br>
-<form action="3_2.php" method="POST">
+<form action="login_submit.php" method="POST">
 <input type="text" name="email" value="" placeholder="メールアドレス"><br>
 <br>
 <input type="password" name="password" value=""  placeholder="パスワード"><br>
