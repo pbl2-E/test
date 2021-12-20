@@ -16,7 +16,7 @@
  $memo = $_POST['memo'];
  echo("\n".$file."を作成しました\n");
 
- $fw = fopen($file, "w");
+ $fw = fopen($file, "x");
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
 ?>
