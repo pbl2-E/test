@@ -5,7 +5,7 @@
 <title></title>
 </head>
 <body>
-<div style="align:center;">タスクを登録いたしました。</div>
+<div style="align:center;">内容を登録いたしました。</div>
 <?php
 
  $contents_name = $_POST['contents_name'];
