@@ -19,7 +19,7 @@
  $fw = fopen($file, "x");
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
- $fo = fopen("file_operater.txt", "a");
+ $fo = fopen("file_operatr.txt", "a");
  fwrite($fo, $file."\n");
  fclose($fo);
 ?>
