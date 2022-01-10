@@ -1,7 +1,7 @@
 <!DOCUMENT html>
 <html lang="ja">
 <head>
-<title>タスク登録</title>
+<title>内容登録</title>
 <meta charset="UTF-8">
 <script type="text/javascript">
 function HomePage(){
@@ -14,7 +14,7 @@ function AddCheck(){
          deadline_day = document.getElementById("deadline_day").value;
          if(task_name=="" || deadline_year=="" || deadline_month=="" || deadline_day==""){
                      // 関数AddErrorの機能を併合
-                        document.getElementById("message").innerHTML = '<font color="red">タスク名、期\\
+                        document.getElementById("message").innerHTML = '<font color="red">内容名、期\\
 限を入力してください</font>'
                                                                      return false;
                                                                      }
