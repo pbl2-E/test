@@ -14,7 +14,7 @@
  $file = $_POST['task_name'].".txt";
  $memo = $_POST['memo'];
 
- $file = 'ab.txt';
+ $file = 'ab.txt';//後で消す
  //削除機能
  if(isset($_POST['del'])){
    unlink($file);
