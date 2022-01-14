@@ -21,12 +21,10 @@ function RegisterError(){
   <br>
     <br>
   <br>
-  <input type="textarea" name="address" placeholder="メールアドレス" size=24 re\
-quired>
+  <input type="textarea" name="address" placeholder="メールアドレス" size=24 required>
   <br>
   <br>
-  <input type="password" name="password" placeholder="パスワード" size=25 requi\
-red>
+  <input type="password" name="password" placeholder="パスワード" size=25 required>
   <br>
   <br>
   <input type="button" value="戻る" onClick="history.back()">
