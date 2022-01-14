@@ -44,3 +44,8 @@ while ($line = fgets($fp)){
    LoginError();
 
 fclose($fp);
+}
+?>
+
+</body>
+</html>
