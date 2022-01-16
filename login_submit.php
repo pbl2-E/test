@@ -41,8 +41,9 @@ while ($line = fgets($fp)){
    return;
  }
 }
-   LoginError();
-
+   if($trim != $ans){
+      LoginError();
+   }
 fclose($fp);
 }
 ?>
