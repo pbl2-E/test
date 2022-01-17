@@ -34,13 +34,15 @@ function AddCheck(){
 <?php
  $task_name = $_POST['task_name'];
  if($task_name == null){
-  $task_name = "名無し";
+  $task_name = "test1";
+<!--ここは環境によりけり。エラーにしても代理変数を入れてもいいよ-->
  }
+ session_start();
+<!--phpのなかで↑の一行を追加して、セッションを導入しているプログラムで下の行にあるような書き方で変数を共有できる\
+ぞ-->
+ $_SESSION['task_name'] = $task_name;
  echo($task_name);
- echo("<div style=\"visibility: hidden;\" name=\"task_name\">".$task_name."</div>")
 ?>
-<!--ここまででタスク名を受け取っていなければならない。これの前のページでtask_nameをPOSTしておいてほしい\
--->
 <br><br>
 内容　：<input type="text" name="contents_name" size=15><br><br>
 期限：<select name="deadline_year">
