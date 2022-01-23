@@ -29,12 +29,10 @@
       <td>タスク</td>
       <td>期限</td>
       <td>頻度</td>
-      <td>達成度</td>
       <td>削除</td>
     </tr>
     <tr>
       <td>タスク1</td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
