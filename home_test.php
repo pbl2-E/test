@@ -14,26 +14,35 @@
  }
  $ID = $_SESSION['ID'];
  if($ID == null){
-  $ID = "nanashi";
+  $ID = "masaru,0913";
  }
+ //上のはテスト用。ご自由にどうぞ
  for($i = 0; $i < count($item) - 1; $i++){
   list($item_name,$yojou) = explode(".",$item[$i],2);
-  echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test/\
-port_contents.php?file_name=$item[$i]'>".$item_name."</a> : ");
+  if($id[$i] == $ID){
+   echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test\
+/port_contents.php?file_name=$item[$i]'>".$item_name."</a> : ");
+  }
   $fw = file_get_contents($item[$i]);
   list($task, $con) = explode("\n", $fw, 2);
   list($task_name,$deadline_year,$deadline_month,$deadline_day,$memo) = explode(",",$task);
-  if($memo == ""){
+  if($memo == null){
    $memo = "未定";
   }
+  if($id[$i] == $ID){
   echo($deadline_year.",".$deadline_month.",".$deadline_day." : ".$memo." : ");
+  }
   $ach = $_SESSION['ach'];
   if($ach == null){
    $ach = "達成度はまだ未実装";
   }
-  echo($ach." : </b></font><input type=button value=削除><br>");
+  if($id[$i] == $ID){
+   echo($ach." : </b></font><input type=button value=削除><br>");
+  }
  }
- echo ("できてるかい？")
+ echo ("できてるかい？<br>")
 ?>
+<a href="http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test/add_task.php">タスク追加はこっちだ</a>
 </body>
 </html>
+
