@@ -22,7 +22,7 @@
    $fw = fopen("file_operator.txt", "r+");
    $value = file($file_name);//ファイル全体を一行ずつ配列で確保
    $i = 1;
-   $pcheck = 0;
+ 
    while($line = fgets($fw)){//何行目に該当するタスクのファイルがあるか探査
      $val = explode("," ,$line);
      if($val[0] == $file){//$val[0]に各列のタスク名ファイルが入る
