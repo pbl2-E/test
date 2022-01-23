@@ -32,7 +32,7 @@ function AddCheck(){
 <div align="center">
 タスク名　：
 <?php
- $task_name = $_POST['task_name'];
+ $task_name = $_GET['file_name'];
  if($task_name == null){
   $task_name = "test1";
 <!--ここは環境によりけり。エラーにしても代理変数を入れてもいいよ-->
