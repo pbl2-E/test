@@ -20,5 +20,6 @@
  fclose($fw);
  echo("\n".$contents_name."を".$file."に登録しました\n");
 ?>
+<a href="http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test/home_test.php">ホームへGO！</a><br> 
 </body>
 </html>
