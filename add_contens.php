@@ -12,7 +12,7 @@
  $deadline_year = $_POST['deadline_year'];
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
- $file = $_SESSION['task_name'].".txt";
+ $file = $_SESSION['task_name'];
  $memo = $_POST['memo'];
 
  $fw = fopen($file, "a");
