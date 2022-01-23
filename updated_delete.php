@@ -25,13 +25,13 @@
    $pcheck = 0;
    while($line = fgets($fw)){//何行目に該当するタスクのファイルがあるか探査
      $val = explode("," ,$line);
-     if($val[0] == $file){
+     if($val[0] == $file){//$val[0]に各列のタスク名ファイルが入る
          break;
      }
      else{
        $i= $i + 1; //$iに何行目にあるかを書いておく
      }
-     echo $val[0]; echo '<br>';
+     echo $val[0]; echo '<br>';//後で消す
 
    }
    fclose(fw);
