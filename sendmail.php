@@ -46,7 +46,7 @@ while ($line = fgets($fp)){
     if( mb_send_mail($email, $subject, $body, $header, $sendmail_param) ){
      echo '登録を受け付けました。<br>'."\n";
 
-     echo '<form action="signup_complete.html" method="POST">'."\n";
+     echo '<form action="signup_complete.php" method="POST">'."\n";
      echo '<br><input type="submit" value="次へ"></form>'."\n";
 
     }else{
