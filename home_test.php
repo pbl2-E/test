@@ -21,7 +21,7 @@
   list($item_name,$yojou) = explode(".",$item[$i],2);
   if($id[$i] == $ID){
    echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test\
-/port_contents.php?file_name=$item[$i]'>".$item_name."</a> : ");
+/contents.php?file_name=$item[$i]'>".$item_name."</a> : ");
   }
   $fw = file_get_contents($item[$i]);
   list($task, $con) = explode("\n", $fw, 2);
