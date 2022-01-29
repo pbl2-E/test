@@ -8,17 +8,22 @@
 <?php session_start();
 
  $task_name = $_POST['task_name'];
- $deadline_year = $_POST['deadline_year'];
- $deadline_month = $_POST['deadline_month'];
- $deadline_day = $_POST['deadline_day'];
  //ここから
  $IDs = $SESSION['ID'];
  list($id,$password) = explode(",",$IDs);
  $file = $_POST['task_name']."_".$id.".txt";
  //ここまでいろってるで
- $memo = $_POST['memo'];
+ $file = $_POST['task_name'].".txt";//session関連よくわかってないので不要であれば、こっちを消してください
+ $fp = fopen($file , "r");
+ $line2 = fgets($fp);
+ $ymd = explode(",",$line2);
+ $task_name = $ymd[0];
+ $deadline_year = $ymd[1];
+ $deadline_month = $ymd[2];
+ $deadline_day = $ymd[3];
+ $memo = $ymd[4];
+ 
 
- $file = "test15.txt"; //確認用後で消す
  //削除機能
  if(isset($_POST['del'])){
    unlink($file); //ファイルそのものはここで削除
