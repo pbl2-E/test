@@ -14,9 +14,9 @@
  $deadline_day = $_POST['deadline_day'];
  $file = $_SESSION['task_name'];
  $IDs = $_SESSION['ID'];
- 
+ list($id,$pas) =explode(",",$IDs);
  list($file1,$file2) = explode(",",$file);
- $file = 
+ $file = $file1."_".$id.$file2;
  $memo = $_POST['memo'];
 
  $fw = fopen($file, "a");
