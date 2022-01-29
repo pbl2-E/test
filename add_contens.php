@@ -15,7 +15,7 @@
  $file = $_SESSION['task_name'];
  $IDs = $_SESSION['ID'];
  list($id,$pas) =explode(",",$IDs);
- list($file1,$file2) = explode(",",$file);
+ list($file1,$file2) = explode("",$file);
  $file = $file1."_".$id.$file2;
  $memo = $_POST['memo'];
 
