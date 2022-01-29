@@ -12,7 +12,7 @@
 
 $task_name = $_GET['file_name'];
 
-list($file_name,$trush) = explode(".",$task_name,2);
+list($file_name,$trush) = explode("",$task_name,2);
 echo ("<font size=5 color=#008000>".$file_name."</font>"."<br><br>");
 
 
