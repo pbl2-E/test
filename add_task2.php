@@ -12,22 +12,26 @@
  $deadline_year = $_POST['deadline_year'];
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
- $file = $task_name.".txt";
  $memo = $_POST['memo'];
  echo("\n".$file."を作成しました<br>");
  $ID = $_SESSION['ID'];
+ list($id,$pas) =explode(",",$ID);
+ $file = $task_name."_".$id.".txt";
+
 
  $fw = fopen($file, "x");
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
  $f = fopen("file_operator.txt", "a");
- echo($f);
  if($f == null){
-  echo("ファイル開けてねぇじゃん");
+  echo("ファイル開けてねぇじゃんよぉ梶野ぉ");
+ }
+ if($ID == null){
+  $ID = "masaru,0913";
  }
  fwrite($f, $file.",".$ID."\n");
  fclose($f);
 ?>
+<a href="http://sshg.cs.ehime-u.ac.jp/~g187sao/webpro/test/home_test.php">ホームへGO！</a>
 </body>
 </html>
-
