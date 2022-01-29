@@ -16,7 +16,7 @@
  $IDs = $_SESSION['ID'];
  list($id,$pas) =explode(",",$IDs);
  list($file1,$file2) = explode("",$file);
- $file = $file1."_".$id.$file2;
+ $file = $file1."_".$id.$file2.".txt";
  $memo = $_POST['memo'];
 
  $fw = fopen($file, "a");
