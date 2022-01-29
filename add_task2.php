@@ -20,6 +20,7 @@
 
 
  $fw = fopen($file, "x");
+ chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
  $f = fopen("file_operator.txt", "a");
