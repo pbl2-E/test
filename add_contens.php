@@ -13,6 +13,10 @@
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
  $file = $_SESSION['task_name'];
+ $IDs = $_SESSION['ID'];
+ 
+ list($file1,$file2) = explode(",",$file);
+ $file = 
  $memo = $_POST['memo'];
 
  $fw = fopen($file, "a");
