@@ -11,9 +11,11 @@
  $deadline_year = $_POST['deadline_year'];
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
+ //ここから
  $IDs = $SESSION['ID'];
  list($id,$password) = explode(",",$IDs);
  $file = $_POST['task_name']."_".$id.".txt";
+ //ここまでいろってるで
  $memo = $_POST['memo'];
 
  $file = "test15.txt"; //確認用後で消す
