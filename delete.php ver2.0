@@ -22,7 +22,7 @@
  $deadline_month = $ymd[2];
  $deadline_day = $ymd[3];
  $memo = $ymd[4];
- 
+ fclose($fp);
 
  //削除機能
  if(isset($_POST['del'])){
