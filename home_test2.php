@@ -8,9 +8,9 @@
 <div style="align:center;">タスク一覧</div>
  <h1 id = "heading">Message</h1>
 <script type="text/javascript">
-var message = "hi from";
-var city = ["Tokyo","Paris","London","Graz"];
-document.getElementById("heading").innerHTML = message + city[Math.floor(Math.random() * 4)];
+var message = "ヒント：";
+var city = ["今日も頑張りましょう！","君ならできる！","見落としはないかな？頑張れ！","少年よ大志を抱け","夢に向かって"];
+document.getElementById("heading").innerHTML = message + city[Math.floor(Math.random() * 5)];
 </script>
 <form action="delete.php" method="POST">
 <?php session_start();
