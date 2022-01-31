@@ -6,6 +6,12 @@
 </head>
 <body>
 <div style="align:center;">タスク一覧</div>
+ <h1 id = "heading">Message</h1>
+<script type="text/javascript">
+var message = "hi from";
+var city = ["Tokyo","Paris","London","Graz"];
+document.getElementById("heading").innerHTML = message + city[Math.floor(Math.random() * 4)];
+</script>
 <form action="delete.php" method="POST">
 <?php session_start();
  $f = file_get_contents("file_operator.txt");
