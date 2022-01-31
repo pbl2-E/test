@@ -43,7 +43,7 @@
      echo $val[0]; echo '<br>';//後で消す
 
    }
-   fclose(fw);
+   fclose($fw);
    $fw = fopen("file_operator.txt", "w");//いったんファイルを空白にする
    //rewind($fw); //ファイルポインタを最初の位置に戻す//ここいらない
 
