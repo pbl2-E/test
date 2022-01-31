@@ -34,8 +34,8 @@ function AddCheck(){
 <style>
 .task{
     display: inline-block;
-    /*コレ*/width: 10em;
-    /*コレ*/max-width: 100%;
+    width: 10em;
+    max-width: 100%;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
@@ -43,8 +43,8 @@ function AddCheck(){
 }
 .deadline{
     display: inline-block;
-    /*コレ*/width: 7em;
-    /*コレ*/max-width: 100%;
+    width: 7em;
+    max-width: 100%;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
@@ -52,8 +52,8 @@ function AddCheck(){
 }
 .deadline2{
     display: inline-block;
-    /*コレ*/width: 6em;
-    /*コレ*/max-width: 100%;
+    width: 6em;
+    max-width: 100%;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
@@ -61,8 +61,8 @@ function AddCheck(){
 }
 .memo{
     display: inline-block;
-    /*コレ*/width: 20em;
-    /*コレ*/max-width: 100%;
+    width: 20em;
+    max-width: 100%;
     padding: 0.5em;
     border: 1px solid #999;
     box-sizing: border-box;
