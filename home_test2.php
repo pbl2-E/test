@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <title></title>
+<style>
+body {
+  background-image: url(mizuirohaikeiy3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>
 </head>
 <body>
 <div style="align:center;">タスク一覧</div>
