@@ -8,15 +8,22 @@
 <?php session_start();
 
  $task_name = $_POST['task_name'];
- $deadline_year = $_POST['deadline_year'];
- $deadline_month = $_POST['deadline_month'];
- $deadline_day = $_POST['deadline_day'];
- //ここから
- $IDs = $SESSION['ID'];
+
+//ここから
+ $IDs = $_SESSION['ID'];
  list($id,$password) = explode(",",$IDs);
  $file = $_POST['task_name']."_".$id.".txt";
  //ここまでいろってるで
- $memo = $_POST['memo'];
+ //$file = $_POST['task_name'].".txt";//session関連よくわかってないので不要であれば、こっちを消してください
+ $fp = fopen($file , "r");
+ $line2 = fgets($fp);
+ $ymd = explode(",",$line2);
+ $task_name = $ymd[0];
+ $deadline_year = $ymd[1];
+ $deadline_month = $ymd[2];
+ $deadline_day = $ymd[3];
+ $memo = $ymd[4];
+ fclose($fp);
 
  //削除機能
  if(isset($_POST['del'])){
@@ -37,23 +44,23 @@
      echo $val[0]; echo '<br>';//後で消す
 
    }
-   fclose(fw);
+   fclose($fw);
    $fw = fopen("file_operator.txt", "w");//いったんファイルを空白にする
-   //rewind($fw); //ファイルポインタを最初の位置に戻す//ここいらない
+ //rewind($fw); //ファイルポインタを最初の位置に戻す//ここいらない
 
    $arraycnt = count($value);  //配列の数をカウントする
    for($k=0;$k < $arraycnt;$k++){
      if($i == $k+1){//消すべきファイル名をスキップしてそれ以外を書き込み
        continue;
      }else{
- fwrite($fw, $value[$k]);
+       fwrite($fw, $value[$k]);
      }
  }
    fclose($fw);
  }
 
- echo 'タスク名　:　';
- echo($task_name); echo '<br>';
+ echo ('タスク名　:　');
+ echo($task_name."<br>");
  echo '期限　:　';
  echo($deadline_year); echo '年';
  echo($deadline_month); echo '月';
