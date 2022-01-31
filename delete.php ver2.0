@@ -13,7 +13,7 @@
  list($id,$password) = explode(",",$IDs);
  $file = $_POST['task_name']."_".$id.".txt";
  //ここまでいろってるで
- $file = $_POST['task_name'].".txt";//session関連よくわかってないので不要であれば、こっちを消してください
+ //$file = $_POST['task_name'].".txt";//session関連よくわかってないので不要であれば、こっちを消してください
  $fp = fopen($file , "r");
  $line2 = fgets($fp);
  $ymd = explode(",",$line2);
