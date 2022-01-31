@@ -59,11 +59,6 @@
  }
 
 
- //実験用後で消す
- $task_name = 'タスク１';
- $deadline_year = '2021';
- $deadline_month = '12';
- $deadline_day = '21';
 
  echo 'タスク名　:　';
  echo($task_name); echo '<br>';
