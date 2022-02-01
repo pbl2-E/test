@@ -2,6 +2,14 @@
 <html lang="ja">
 <head>
 <title>タスク登録</title>
+<style>
+body {
+  background-image: url(mizuirohaikeiy3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>
 <meta charset="UTF-8">
 <script type="text/javascript">
 function HomePage(){

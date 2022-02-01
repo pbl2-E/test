@@ -21,6 +21,14 @@ function AddCheck(){
                                                                      return true;
 }
 </script>
+<style>
+body {
+  background-image: url(mizuirohaikeiy3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>
 </head>
 <body>
 <br>

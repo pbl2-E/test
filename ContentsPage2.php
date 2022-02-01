@@ -3,6 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+<style>
+body {
+  background-image: url(mizuirohaikeiy3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>
 </head>
 <body align="center">
 <div id="kigen" align="center"></div>
