@@ -3,19 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
-<style>
-body {
-  background-image: url(mizuirohaikeiy3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-</style>
 </head>
 <body align="center">
 <div id="kigen" align="center"></div>
 <br><br>
-<form action="port_contents.php" method="GET">
+<form action="" method="POST">
 <?php
 
 $task_name = $_GET['file_name'];
@@ -30,22 +22,63 @@ list($task, $con) = explode("\n", $fw, 2);
 
 $f = fopen($task_name, "r");
 
-for($i = 0; $i < $count; $i++){
-$line[$i] = fgets($f);
+for($i2 = 0; $i2 < $count; $i2++){
+$line[$i2] = fgets($f);
  }
 
 for($s = 1; $s < $count; $s++){
-echo ($line[$s]."<input type=button name=delete value=削除><br>");
+echo ($line[$s]."<input type=submit name=del value=削除><br>");
 }
+
+for($t = 1; $t < $count; $t++){
+list($con2[$t], $bad) = explode(",", $line[$t],2);
+}
+
+echo("<a href='http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/port_contents.php?file_name=$file_name'>追加</a>");
 
 fclose($f);
 
 echo("<input type=hidden name=file_name value=$file_name>");
+
+ //削除機能
+ if(isset($_POST['del'])){
+   echo($file);
+   unlink($file); //ファイルそのものはここで削除
+   $file_name2 = $task_name;
+   $fp = fopen($file_name2, "r+");
+ $value = file($file_name2);//ファイル全体を一行ずつ配列で確保
+   $i = 1;
+
+   while($line2 = fgets($fp)){//何行目に該当するタスクのファイルがあるか探査
+     $val = explode("," ,$line2);
+     if($val[0] == $con2[1]){//$val[0]に各列のタスク名ファイルが入る
+         break;
+     }
+     else{
+       $i= $i + 1; //$iに何行目にあるかを書いておく
+}
+     //echo $val[0]; echo '<br>';//後で消す
+
+   }
+   fclose($fp);
+   $fp = fopen($task_name, "w");//いったんファイルを空白にする
+   //rewind($fp); //ファイルポインタを最初の位置に戻す//ここいらない
+
+   $arraycnt = count($value);  //配列の数をカウントする
+   for($k=0;$k < $arraycnt;$k++){
+     if($i == $k+1){//消すべきファイル名をスキップしてそれ以外を書き込み
+       continue;
+     }else{
+       fwrite($fp, $value[$k]);
+     }
+ }
+   fclose($fp);
+ }
+
 ?>
 
 <br>
 <br>
-<input type="submit" name="submit" value="追加" style="width:100px; height:50px" onClick="location.href='port_contents.php'">
 <input type="button" value="戻る" style="width:100px; height:50px" onClick="location.href='home_test2.php'">
 </form>
 </body>
