@@ -27,15 +27,51 @@
     color: transparent;
     -webkit-text-stroke: 0.02em #0096c7;
   }
+  .logout{
+    align: 0 center;
+    padding-top:1px;
+    padding-bottom:1px;
+  }
+  .add{
+    padding-right: 825px;
+  }
+  table{
+    border-collapse: collapse;
+    border: solid 2px skyblue;/*表全体を線で囲う*/
+    text-align: center;
+  }
+  table th {/*table内のtdに対して*/
+    padding: 3px 10px;/*上下3pxで左右10px*/
+    border: solid 2px skyblue;/*実線 1px 黒*/
+    background: #EBFDFF;/*背景色*/
+  }
+  table td {/*table内のtdに対して*/
+    padding: 3px 10px;/*上下3pxで左右10px*/
+    border: dashed 1px skyblue;/*点線 1px 黒*/
+  }
 </style>
 </head>
 <body>
   <font class="font1">Goal-achieving support app</font><br>
-  <font class="tasukuitiran">タスク一覧</font><br>
+  <div class="logout">
+    <font class="tasukuitiran">タスク一覧</font>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <input type="button" value="ログアウト" onClick="location.href='logout.php'"><br>
+  </div>
   <font >ようこそ</font>
-  <br>
-  <br>
-  <br>
+  <?php session_start();
+  $f = file_get_contents("file_operator.txt");
+  $line = explode("\n", $f);
+  for($i = 0; $i < count($line); $i++){
+    list($item[$i],$id[$i]) = explode(",",$line[$i],2);
+  }
+  echo($_SESSION['ID']."<br>");
+  $ID = $_SESSION['ID'];
+  if($ID == null){
+    $ID = "masaru,0913";
+  }
+  //上のはテスト用
+  ?>
   <br>
   <br>
   <br>
@@ -49,30 +85,21 @@
       </script>
     </div>
     <br>
+    <div class="add">
+      <input type="button" value="タスク追加" onClick="location.href='add_task.php'">
+    </div>
     <br>
     <form action="delete.php" method="POST">
-      <table align="center" cellpadding=3 cellspacing=0 border=1 width=800px >
+      <table align="center" cellpadding=3 cellspacing=0 border=1 width=1000px >
         <tr>
-          <td>タスク</td>
-          <td>期限</td>
-          <td>頻度</td>
-          <td>達成度</td>
-          <td>削除</td>
+          <th>タスク</th>
+          <th>期限</th>
+          <th>頻度</th>
+          <th>達成度</th>
+          <th>削除</th>
         </tr>
 
-        <?php session_start();
-        $f = file_get_contents("file_operator.txt");
-        $line = explode("\n", $f);
-        for($i = 0; $i < count($line); $i++){
-          list($item[$i],$id[$i]) = explode(",",$line[$i],2);
-        }
-        echo($_SESSION['ID']."<br>");
-        $ID = $_SESSION['ID'];
-        if($ID == null){
-          $ID = "masaru,0913";
-        }
-        //上のはテスト用
-
+        <?php
         for($i = 0; $i < count($item) - 1; $i++){
           list($item_con,$yojou) = explode(".",$item[$i],2);
           //こいつをPOSTするとユーザー名がくっついた状態の正しいファイル名が送れるぞ♥
@@ -129,15 +156,7 @@
         }
         ?>
       </table>
-      <?php
-      echo ("できてるかい？<br>")
-      ?>
-    </tr>
-  </table>
-
-  <a href="http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/add_task.php">タスク追加はこっちだ</a>
-</form>
-<input type="button" value="ログアウト" onClick="location.href='logout.php'">
-</div>
+    </form>
+  </div>
 </body>
 </html>
