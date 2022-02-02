@@ -75,7 +75,7 @@
         //list($user_name,$user_pas) = explode(",",$ID);
         if($id[$i] == $ID){
           echo'<td>';
-          echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g123kaji/test/ContentsPage2.php?file_name=$item[$i]'>".$item_name."</a> : ");
+          echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/ContentsPage2.php?file_name=$item[$i]'>".$item_name."</a> : ");
         }
         $fw = file_get_contents($item[$i]);
         list($task, $con) = explode("\n", $fw, 2);
@@ -100,7 +100,7 @@
       ?>
       </table>
 
-      <a href="http://sshg.cs.ehime-u.ac.jp/~g123kaji/test/add_task.php">タスク追加はこっちだ</a>
+      <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/add_task.php">タスク追加はこっちだ</a>
     </form>
     <input type="button" value="ログアウト" onClick="location.href='logout.php'">
   </div>
