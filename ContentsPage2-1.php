@@ -16,7 +16,7 @@ body {
 <div id="kigen" align="center"></div>
 <br><br>
 <form action="port_contents.php" method="GET">
-<table border="1">
+<table border="1" align="center">
 <?php
 
 $task_name = $_GET['file_name'];
