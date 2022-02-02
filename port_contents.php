@@ -22,8 +22,7 @@ function AddCheck(){
          deadline_day = document.getElementById("deadline_day").value;
          if(task_name=="" || deadline_year=="" || deadline_month=="" || deadline_day==""){
                      // 関数AddErrorの機能を併合
-                        document.getElementById("message").innerHTML = '<font color="red">内容名、期\\
-限を入力してください</font>'
+                        document.getElementById("message").innerHTML = '<font color="red">内容名、期限を入力してください</font>'
                                                                      return false;
                                                                      }
                                                                      return true;
