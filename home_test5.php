@@ -103,13 +103,15 @@
           echo '<font>',$task_date[3],'</font>';
           echo "</td>";
 
-          echo "<td>";
-          echo '<font>',$task_date[4],'</font>';
-          echo "</td>";
+          if($task_date[4] != null){
+            echo "<td>";
+            echo '<font>',$task_date[4],'</font>';
+            echo "</td>";
+          }
 
           if($task_date[4] == null){
             echo "<td>";
-            echo("未定");
+            echo  ("未定");
             echo "</td>";
           }
 
