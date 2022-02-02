@@ -30,10 +30,9 @@
 </style>
 </head>
 <body>
-  <font class="font1">Goal-achieving support app</font>
-  <br>
-  <font class="tasukuitiran">タスク一覧</font>
-  <br>
+  <font class="font1">Goal-achieving support app</font><br>
+  <font class="tasukuitiran">タスク一覧</font><br>
+  <font >ようこそ</font>
   <br>
   <br>
   <br>
@@ -51,22 +50,7 @@
     </div>
     <br>
     <br>
-    <br>
     <form action="delete.php" method="POST">
-      <?php session_start();
-      $f = file_get_contents("file_operator.txt");
-      $line = explode("\n", $f);
-      for($i = 0; $i < count($line); $i++){
-        list($item[$i],$id[$i]) = explode(",",$line[$i],2);
-      }
-      echo($_SESSION['ID']."<br>");
-      $ID = $_SESSION['ID'];
-      if($ID == null){
-        $ID = "masaru,0913";
-      }
-      //上のはテスト用
-      ?>
-
       <table align="center" cellpadding=3 cellspacing=0 border=1 width=800px >
         <tr>
           <td>タスク</td>
@@ -75,61 +59,73 @@
           <td>達成度</td>
           <td>削除</td>
         </tr>
-        <?php
+
+        <?php session_start();
+        $f = file_get_contents("file_operator.txt");
+        $line = explode("\n", $f);
+        for($i = 0; $i < count($line); $i++){
+          list($item[$i],$id[$i]) = explode(",",$line[$i],2);
+        }
+        echo($_SESSION['ID']."<br>");
+        $ID = $_SESSION['ID'];
+        if($ID == null){
+          $ID = "masaru,0913";
+        }
+        //上のはテスト用
+
         for($i = 0; $i < count($item) - 1; $i++){
-          echo "<tr>";
           list($item_con,$yojou) = explode(".",$item[$i],2);
           //こいつをPOSTするとユーザー名がくっついた状態の正しいファイル名が送れるぞ♥
           list($item_name,$pas) = explode("_",$item_con);
           //echo($id[$i]);
           //list($user_name,$user_pas) = explode(",",$ID);
           if($id[$i] == $ID){
+            echo "<tr>";
             echo "<td>";
-            echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/ContentsPage2.php?file_name=$item[$i]'>".$item_name."</a> : ");
+            echo (
+              /*"<font color=#008000><b>".($i+1). */
+              "<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/ContentsPage2.php?file_name=$item[$i]'>".$item_name.
+              "</a>");
             echo "</td>";
-          }
 
+            $fw = file_get_contents($item[$i]);
+            list($task, $con) = explode("\n", $fw, 2);
+            list($task_name,$deadline_year,$deadline_month,$deadline_day,$memo) = explode(",",$task);
 
-          $fw = file_get_contents($item[$i]);
-          list($task, $con) = explode("\n", $fw, 2);
-          list($task_name,$deadline_year,$deadline_month,$deadline_day,$memo) = explode(",",$task);
-
-          $task_date = explode(",",$task);
-          echo "<td>";
-          echo '<font>',$task_date[1],'</font>';
-          echo ("/");
-          echo '<font>',$task_date[2],'</font>';
-          echo ("/");
-          echo '<font>',$task_date[3],'</font>';
-          echo "</td>";
-
-          if($task_date[4] != null){
             echo "<td>";
-            echo '<font>',$task_date[4],'</font>';
+            echo '<font>',$deadline_year,'</font>';
+            echo  ("/");
+            echo '<font>',$deadline_month,'</font>';
+            echo  ("/");
+            echo '<font>',$deadline_day,'</font>';
             echo "</td>";
-          }
 
-          if($task_date[4] == null){
-            echo "<td>";
-            echo  ("未定");
-            echo "</td>";
-          }
+            if($memo != null){
+              echo "<td>";
+              echo '<font>',$memo,'</font>';
+              echo "</td>";
+            }
 
-          if($id[$i] == $ID){
-            echo($deadline_year.",".$deadline_month.",".$deadline_day." : ".$memo." : ");
+            else if($memo == null){
+              echo "<td>";
+              echo  ("未定");
+              echo "</td>";
+            }
+
+
+            $ach = $_SESSION['ach'];
+            if($ach == null){
+              echo "<td>";
+              echo ("✓");
+              echo "</td>";
+            }
+            if($id[$i] == $ID){
+              echo "<td>";
+              echo($ach."</b></font><button type=submit name=task_name value=>削除</button><br>");
+              echo "</td>";
+            }
+            echo "</tr>";
           }
-          $ach = $_SESSION['ach'];
-          if($ach == null){
-            echo "<td>";
-            echo ("✓");
-            echo "</td>";
-          }
-          if($id[$i] == $ID){
-            echo "<td>";
-            echo($ach." : </b></font><button type=submit name=task_name value=>削除</button><br>");
-            echo "</td>";
-          }
-          echo "</tr>";
         }
         ?>
       </table>
