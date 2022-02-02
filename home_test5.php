@@ -35,6 +35,9 @@
   .add{
     padding-right: 680px;
   }
+  .hide{
+    display:none;
+  }
   table{
     width: 1000px;
     padding: 3px;
@@ -84,10 +87,11 @@
   }
   echo($_SESSION['ID']."<br>");
   $ID = $_SESSION['ID'];
+  ?>
+  <?php
   if($ID == null){
-    $ID = "masaru,0913";
+    echo ("ログアウトからログインし直してください<br>");
   }
-  //上のはテスト用
   ?>
   <br>
   <br>
@@ -103,7 +107,12 @@
     </div>
     <br>
     <div class="add">
-      <input type="button" value="タスク追加" onClick="location.href='add_task.php'">
+      <?php
+      //if($ID != null){echo ("ログイン！<br>");}
+      $class="";
+      if ($ID == null) $class="hide";
+      ?>
+      <input type="button" value="タスク追加" onClick="location.href='add_task.php'" id="accept" class="<?PHP echo $class; ?>">
     </div>
     <br>
     <form action="delete.php" method="POST">
