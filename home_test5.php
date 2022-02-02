@@ -33,9 +33,11 @@
     padding-bottom:1px;
   }
   .add{
-    padding-right: 825px;
+    padding-right: 680px;
   }
   table{
+    width: 1000px;
+    padding: 3px;
     border-collapse: collapse;
     border: solid 2px skyblue;/*表全体を線で囲う*/
     text-align: center;
@@ -44,6 +46,21 @@
     padding: 3px 10px;/*上下3pxで左右10px*/
     border: solid 2px skyblue;/*実線 1px 黒*/
     background: #EBFDFF;/*背景色*/
+  }
+  .tabletask {
+    width: 300px;
+  }
+  .tabledate {
+    width: 100px;
+  }
+  .tablehindo {
+    width: 300px;
+  }
+  .tabletassei {
+    width: 100px;
+  }
+  .tabledelete {
+    width: 100px;
   }
   table td {/*table内のtdに対して*/
     padding: 3px 10px;/*上下3pxで左右10px*/
@@ -90,13 +107,13 @@
     </div>
     <br>
     <form action="delete.php" method="POST">
-      <table align="center" cellpadding=3 cellspacing=0 border=1 width=1000px >
+      <table>
         <tr>
-          <th>タスク</th>
-          <th>期限</th>
-          <th>頻度</th>
-          <th>達成度</th>
-          <th>削除</th>
+          <th class="tabletask">タスク</th>
+          <th class="tabledate">期限</th>
+          <th class="tablehindo">頻度</th>
+          <th class="tabletassei">達成度</th>
+          <th class="tabledelete">削除</th>
         </tr>
 
         <?php
