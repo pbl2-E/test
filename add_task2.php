@@ -37,12 +37,11 @@ $task_name = $_POST['task_name'];
  if($f == null){
   echo("ファイル開けてねぇじゃん");
  }
- $ope = file_get_contents("file_operator.txt");
- $files = explode("\n",$ope);
- for($i = 1;$i < count($files);$i++){
-  list($textfile,$user_info) = explode(",",$file[$i],2);
-  echo($textfile." = ".$file[$i]."<br>");
-  if($file == $textfile){
+ $ope = fopen("file_operator.txt","a");
+ $text = fget($ope);
+ echo($text);
+ for($i = 1;$i < fget($ope);$i++){
+  if($file == $text[$i]){
     $kaburi++;
   }
  }
