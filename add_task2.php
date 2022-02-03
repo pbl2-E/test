@@ -41,6 +41,7 @@ $task_name = $_POST['task_name'];
  $files = explode("\n",$ope);
  for($i = 1;$i < count($files);$i++){
   list($textfile,$user_info) = explode(",",$file[$i],2);
+  echo($textfile." = ".$file[$i]."<br>");
   if($file == $textfile){
     $kaburi++;
   }
@@ -54,6 +55,7 @@ $task_name = $_POST['task_name'];
  }else{
    echo("タスク名ないやん/n");
  }
+ echo("かぶり変数は".$kaburi."<br>".);
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
 </body>
