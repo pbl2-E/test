@@ -14,7 +14,7 @@ body {
 </head>
 <body>
 <div style="align:center;">タスク一覧</div>
- <h1 id = "heading">Message</h1>
+<h1 id = "heading">Message</h1>
 <script type="text/javascript">
 var message = "ヒント：";
 var city = ["今日も頑張りましょう！","君ならできる！","見落としはないかな？頑張れ！","少年よ大志を抱け","夢に向かって"];
@@ -46,7 +46,7 @@ document.getElementById("heading").innerHTML = message + city[Math.floor(Math.ra
   list($task, $con) = explode("\n", $fw, 2);
   list($task_name,$deadline_year,$deadline_month,$deadline_day,$memo) = explode(",",$task);
   if($memo == null){
-   $memo = "未定";
+ $memo = "未定";
   }
   if($id[$i] == $ID){
   echo($deadline_year.",".$deadline_month.",".$deadline_day." : ".$memo." : ");
@@ -56,7 +56,7 @@ document.getElementById("heading").innerHTML = message + city[Math.floor(Math.ra
    $ach = "達成度はまだ未実装";
   }
   if($id[$i] == $ID){
-   echo($ach." : </b></font><button type=submit name=task_name value=>削除</button><br>");
+   echo($ach." : </b></font><button type=submit name=task_name value=$task_name>削除</button><br>");
   }
  }
  echo ("できてるかい？<br>")
