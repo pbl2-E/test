@@ -37,7 +37,7 @@ $line[$i2] = fgets($f);
    
      //echo $val[0]; echo '<br>';//後で消す
 
-   }
+   
    fclose($fp);
    $fp = fopen($task_name, "w");//いったんファイルを空白にする
    //rewind($fp); //ファイルポインタを最初の位置に戻す//ここいらない
