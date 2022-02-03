@@ -3,19 +3,12 @@
 <head>
 <meta charset="utf-8"/>
 <title></title>
-<style>
-body {
-  background-image: url(mizuirohaikeiy3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-</style>
 </head>
 <body>
+<form action="" method= "post">
 <?php session_start();
 
- $task_name = $_POST['task_name'];
+ $task_nameP = $_POST['task_name'];
 
 //ここから
  $IDs = $_SESSION['ID'];
@@ -35,6 +28,7 @@ body {
 
  //削除機能
  if(isset($_POST['del'])){
+   echo($file);
    unlink($file); //ファイルそのものはここで削除
    $file_name = "file_operator.txt";
    $fw = fopen("file_operator.txt", "r+");
@@ -49,12 +43,12 @@ body {
      else{
        $i= $i + 1; //$iに何行目にあるかを書いておく
      }
-     echo $val[0]; echo '<br>';//後で消す
+     //echo $val[0]; echo '<br>';//後で消す
 
    }
-   fclose($fw);
+fclose($fw);
    $fw = fopen("file_operator.txt", "w");//いったんファイルを空白にする
- //rewind($fw); //ファイルポインタを最初の位置に戻す//ここいらない
+   //rewind($fw); //ファイルポインタを最初の位置に戻す//ここいらない
 
    $arraycnt = count($value);  //配列の数をカウントする
    for($k=0;$k < $arraycnt;$k++){
@@ -76,11 +70,11 @@ body {
  echo '頻度　:　';
  echo ($memo); echo '<br>';
 
+ echo("<input type=hidden name=task_name value=$task_nameP>");
 
 ?>
 </body>
 <input type ="button" onclick="location.href='home_test2.php'" value="戻る">
-<form action="" method= "post">
   <input type="hidden" name="del">
   <input type="submit" value="削除">
 </form>
