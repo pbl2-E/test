@@ -161,7 +161,7 @@ echo($task_name);
 </select>
 <br><br>
 　頻度　：<textarea name="memo" class="memo" rows=1 cols=25></textarea><br><br>
-<input type="button" value="　戻る　" onclick="HomePage()" class="back">
+<input type="button" value="　ホームへ　" onclick="HomePage()" class="back">
 <input type="submit" value="　追加　" onclick="return AddCheck()" class="add"><br><br>
 </div>
 </table>
