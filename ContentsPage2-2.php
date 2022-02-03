@@ -28,13 +28,12 @@ $line[$i2] = fgets($f);
  
  //削除機能
  if(isset($_POST['del'])){
-   echo($file);
+   //echo($file);
    
    $file_name2 = $task_name;
    $fp = fopen($file_name2, "r+");
    $value = file($file_name2);//ファイル全体を一行ずつ配列で確保
-   //$i = $_POST['del'];
-   $i = 1;
+   $i = $_POST['del'];
      //echo $val[0]; echo '<br>';//後で消す
 
    
@@ -43,8 +42,9 @@ $line[$i2] = fgets($f);
    //rewind($fp); //ファイルポインタを最初の位置に戻す//ここいらない
 
    $arraycnt = count($value);  //配列の数をカウントする
-   for($k=0;$k < $arraycnt;$k++){
-     if($i == $k+1){//消すべきファイル名をスキップしてそれ以外を書き込み
+   fwrite($fp,$value[0]);
+   for($k=1;$k < $arraycnt;$k++){
+     if($i == $k){//消すべきファイル名をスキップしてそれ以外を書き込み
        continue;
      }else{
        fwrite($fp, $value[$k]);
