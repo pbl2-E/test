@@ -40,7 +40,8 @@ $task_name = $_POST['task_name'];
  $ope = file_get_contents("file_operator.txt");
  $files = explode("\n",$ope);
  for($i = 1;$i < count($files);$i++){
-  if($file == $files[$i]){
+  list($textfile,$user_info) = explode(",",$file[$i],2);
+  if($file == $textfile){
     $kaburi++;
   }
  }
