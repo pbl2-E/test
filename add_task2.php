@@ -25,7 +25,9 @@ $task_name = $_POST['task_name'];
  $ID = $_SESSION['ID'];
  list($id,$pas) =explode(",",$ID);
  $file = $task_name."_".$id.".txt";
+ $kaburi = 0;
 
+ if($task_name != null){
  $fw = fopen($file, "x");
  chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
@@ -35,8 +37,22 @@ $task_name = $_POST['task_name'];
  if($f == null){
   echo("ファイル開けてねぇじゃん");
  }
- fwrite($f, $file.",".$ID."\n");
+ $ope = file_get_contents("file_operator.txt");
+ $files = explode("\n",$ope);
+ for(i = 1;i < count($files)-1;i++){
+  if($file == $files[$i]){
+    $kaburi++;
+  }
+ }
+ if($kaburi <= 0){
+  fwrite($f, $file.",".$ID."\n");
+ }else{
+   echo(タスク内容名かぶってるって\n");
+ }
  fclose($f);
+ }else{
+   echo("タスク名ないやん/n");
+ }
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
 </body>
