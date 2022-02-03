@@ -55,7 +55,7 @@ $task_name = $_POST['task_name'];
  }else{
    echo("タスク名ないやん/n");
  }
- echo("かぶり変数は".$kaburi."<br>".);
+ echo("かぶり変数は".$kaburi."<br>");
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
 </body>
