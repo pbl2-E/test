@@ -25,36 +25,18 @@ $task_name = $_POST['task_name'];
  $ID = $_SESSION['ID'];
  list($id,$pas) =explode(",",$ID);
  $file = $task_name."_".$id.".txt";
- $kaburi = 0;
 
- if($task_name != null){
  $fw = fopen($file, "x");
+ echo($fw);
  chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
  $f = fopen("file_operator.txt", "a");
- echo($f);
  if($f == null){
   echo("ファイル開けてねぇじゃん");
  }
- $ope = fopen("file_operator.txt","a");
- $text = fgets($ope);
- echo($text);
- for($i = 1;$i < fgets($ope);$i++){
-  if($file == $text[$i]){
-    $kaburi++;
-  }
- }
- if($kaburi <= 0){
-  fwrite($f, $file.",".$ID."\n");
- }else{
-   echo("タスク内容名かぶってるって\n");
- }
+ fwrite($f, $file.",".$ID."\n");
  fclose($f);
- }else{
-   echo("タスク名ないやん/n");
- }
- echo("かぶり変数は".$kaburi."<br>");
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
 </body>
