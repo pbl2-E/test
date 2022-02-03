@@ -25,21 +25,7 @@ $f = fopen($task_name, "r");
 for($i2 = 0; $i2 < $count; $i2++){
 $line[$i2] = fgets($f);
  }
-
-for($s = 1; $s < $count; $s++){
-echo ($line[$s]."<input type=submit value=削除><input type=hidden name=del value=$s><br>");
-}
-
-for($t = 1; $t < $count; $t++){
-list($con2[$t], $bad) = explode(",", $line[$t],2);
-}
-
-echo("<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/port_contents.php?file_name=$file_name'>追加</a>");
-
-fclose($f);
-
-echo("<input type=hidden name=file_name value=$file_name>");
-
+ 
  //削除機能
  if(isset($_POST['del'])){
    echo($file);
@@ -66,6 +52,22 @@ echo("<input type=hidden name=file_name value=$file_name>");
  }
    fclose($fp);
  }
+
+for($s = 1; $s < $count; $s++){
+echo ($line[$s]."<input type=submit value=削除><input type=hidden name=del value=$s><br>");
+}
+
+for($t = 1; $t < $count; $t++){
+list($con2[$t], $bad) = explode(",", $line[$t],2);
+}
+
+echo("<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/port_contents.php?file_name=$file_name'>追加</a>");
+
+fclose($f);
+
+echo("<input type=hidden name=file_name value=$file_name>");
+
+ 
 
 ?>
 
