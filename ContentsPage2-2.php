@@ -48,7 +48,7 @@ $line[$i2] = fgets($f);
        continue;
      }else{
        fwrite($fp, $value[$k]);
-       echo(value[$k]);
+       echo($value[$k]);
      }
  }
    fclose($fp);
