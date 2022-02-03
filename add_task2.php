@@ -21,7 +21,7 @@ $task_name = $_POST['task_name'];
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
  $memo = $_POST['memo'];
- echo("\n".$file."を作成しました<br>");
+ echo("\n".$task_name."を作成しました<br>");
  $ID = $_SESSION['ID'];
  list($id,$pas) =explode(",",$ID);
  $file = $task_name."_".$id.".txt";
