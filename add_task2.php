@@ -39,7 +39,7 @@ $task_name = $_POST['task_name'];
  }
  $ope = file_get_contents("file_operator.txt");
  $files = explode("\n",$ope);
- for($i = 1;$i < count($files)-1;$i++){
+ for($i = 1;$i < count($files);$i++){
   if($file == $files[$i]){
     $kaburi++;
   }
