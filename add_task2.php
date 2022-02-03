@@ -13,7 +13,6 @@ body {
 </style>
 </head>
 <body>
-<div style="align:center;">タスクを登録いたしました。</div>
 <?php session_start();
 
 $task_name = $_POST['task_name'];
@@ -36,7 +35,7 @@ $task_name = $_POST['task_name'];
  }
  fwrite($f, $file.",".$ID."\n");
  fclose($f);
- echo("\n".$task_name."を作成しました<br>");
+ echo("\n".$task_name."を登録しました<br>");
  }else{
  fclose($fw);
  echo("タスク名かぶってますやん<br>");
