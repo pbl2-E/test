@@ -87,7 +87,7 @@
   }
   $ID = $_SESSION['ID'];
   list($user_name,$password) = explode(",",$ID,2);
-  echo($_user_name."<br>");
+  echo($user_name."<br>");
   ?>
   <?php
   if($ID == null){
