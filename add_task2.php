@@ -31,12 +31,14 @@ $task_name = $_POST['task_name'];
  chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
+ if($fw != null){
  $f = fopen("file_operator.txt", "a");
  if($f == null){
   echo("ファイル開けてねぇじゃん");
  }
  fwrite($f, $file.",".$ID."\n");
  fclose($f);
+ }
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
 </body>
