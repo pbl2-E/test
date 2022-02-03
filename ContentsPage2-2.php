@@ -33,8 +33,8 @@ $line[$i2] = fgets($f);
    $file_name2 = $task_name;
    $fp = fopen($file_name2, "r+");
    $value = file($file_name2);//ファイル全体を一行ずつ配列で確保
-   $i = $_POST['del'];
-   
+   //$i = $_POST['del'];
+   $i = 1;
      //echo $val[0]; echo '<br>';//後で消す
 
    
@@ -48,6 +48,7 @@ $line[$i2] = fgets($f);
        continue;
      }else{
        fwrite($fp, $value[$k]);
+       echo(value[$k]);
      }
  }
    fclose($fp);
