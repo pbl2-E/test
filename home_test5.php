@@ -85,8 +85,9 @@
   for($i = 0; $i < count($line); $i++){
     list($item[$i],$id[$i]) = explode(",",$line[$i],2);
   }
-  echo($_SESSION['ID']."<br>");
   $ID = $_SESSION['ID'];
+  list($user_name,$password) = explode(",",$ID,2);
+  echo($_user_name."<br>");
   ?>
   <?php
   if($ID == null){
