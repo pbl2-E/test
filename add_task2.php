@@ -21,14 +21,12 @@ $task_name = $_POST['task_name'];
  $deadline_month = $_POST['deadline_month'];
  $deadline_day = $_POST['deadline_day'];
  $memo = $_POST['memo'];
- echo("\n".$task_name."を作成しました<br>");
  $ID = $_SESSION['ID'];
  list($id,$pas) =explode(",",$ID);
  $file = $task_name."_".$id.".txt";
 
  if($task_name != null){
  $fw = fopen($file, "x");
- echo($fw);
  chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  if($fw != null){
@@ -38,6 +36,7 @@ $task_name = $_POST['task_name'];
  }
  fwrite($f, $file.",".$ID."\n");
  fclose($f);
+ echo("\n".$task_name."を作成しました<br>");
  }else{
  fclose($fw);
  echo("タスク名かぶってますやん<br>");
