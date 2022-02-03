@@ -39,7 +39,7 @@ $task_name = $_POST['task_name'];
  }
  $ope = file_get_contents("file_operator.txt");
  $files = explode("\n",$ope);
- for(i = 1;i < count($files)-1;i++){
+ for($i = 1;$i < count($files)-1;$i++){
   if($file == $files[$i]){
     $kaburi++;
   }
@@ -47,7 +47,7 @@ $task_name = $_POST['task_name'];
  if($kaburi <= 0){
   fwrite($f, $file.",".$ID."\n");
  }else{
-   echo(タスク内容名かぶってるって\n");
+   echo("タスク内容名かぶってるって\n");
  }
  fclose($f);
  }else{
