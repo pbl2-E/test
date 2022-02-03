@@ -26,6 +26,7 @@ $task_name = $_POST['task_name'];
  list($id,$pas) =explode(",",$ID);
  $file = $task_name."_".$id.".txt";
 
+ if($task_name != null){
  $fw = fopen($file, "x");
  echo($fw);
  chmod($file, 0666);
@@ -40,6 +41,9 @@ $task_name = $_POST['task_name'];
  }else{
  fclose($fw);
  echo("タスク名かぶってますやん<br>");
+ }
+ }else{
+   echo("タスク名書いてないですやん<br>");
  }
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
