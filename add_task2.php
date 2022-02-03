@@ -38,9 +38,9 @@ $task_name = $_POST['task_name'];
   echo("ファイル開けてねぇじゃん");
  }
  $ope = fopen("file_operator.txt","a");
- $text = fget($ope);
+ $text = fgets($ope);
  echo($text);
- for($i = 1;$i < fget($ope);$i++){
+ for($i = 1;$i < fgets($ope);$i++){
   if($file == $text[$i]){
     $kaburi++;
   }
