@@ -13,7 +13,7 @@ body {
 <meta charset="UTF-8">
 <script type="text/javascript">
 function HomePage(){
-         location.href='Home1.php';
+         location.href='home_test2.php';
 }
 function AddCheck(){
          task_name = document.getElementById("task_name").value;
