@@ -174,7 +174,7 @@
             }
             if($id[$i] == $ID){
               echo "<td>";
-              echo($ach."</b></font><button type=submit name=task_name value=>削除</button><br>");
+              echo($ach."</b></font><button type=submit name=task_name value=$task_name>削除</button><br>");
               echo "</td>";
             }
             echo "</tr>";
