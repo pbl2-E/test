@@ -30,7 +30,6 @@ $task_name = $_POST['task_name'];
  echo($fw);
  chmod($file, 0666);
  fwrite($fw, $task_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
- fclose($fw);
  if($fw != null){
  $f = fopen("file_operator.txt", "a");
  if($f == null){
@@ -38,6 +37,9 @@ $task_name = $_POST['task_name'];
  }
  fwrite($f, $file.",".$ID."\n");
  fclose($f);
+ }else{
+ fclose($fw);
+ echo("タスク名かぶってますやん<br>");
  }
 ?>
 <a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a>
