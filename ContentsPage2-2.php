@@ -46,6 +46,7 @@ $line[$i2] = fgets($f);
    for($k=1;$k < $arraycnt;$k++){
      if($i == $k){//消すべきファイル名をスキップしてそれ以外を書き込み
        continue;
+       echo($k);
      }else{
        fwrite($fp, $value[$k]);
      }
