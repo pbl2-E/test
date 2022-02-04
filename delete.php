@@ -19,6 +19,12 @@
     font-size: 15px;
     padding-right: 100px;
   }
+  .tasukuitiran{
+    font-family: ヒラギノ角ゴシック;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0096c7;
+  }
   .hide{
     display:none;
   }
@@ -43,6 +49,8 @@
 </head>
 <body>
   <font class="font1">Goal-achieving support app</font><br>
+  <font class="tasukuitiran">タスク削除</font><br>
+  <br>
   <br>
   <br>
   <br>
