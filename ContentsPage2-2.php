@@ -15,10 +15,7 @@ $task_name = $_GET['file_name'];
 list($file_name,$trush) = explode("_",$task_name,2);
 echo ("<font size=5 color=#008000>".$file_name."</font>"."<br><br>");
 
-
-$count = count( file( $task_name ) );
- 
-  //削除機能
+//削除機能
  if(isset($_POST['del'])){
    //echo($file);
    
@@ -43,6 +40,10 @@ $count = count( file( $task_name ) );
  }
    fclose($fp);
  }
+ //ファイルの要素数をカウントしていて削除時に空白行が入ってしまうのでここより前に削除
+$count = count( file( $task_name ) );
+ 
+  
  //ファイルをここで開くのでここより前に削除機能
 $fw = file_get_contents($task_name);
 list($task, $con) = explode("\n", $fw, 2);
