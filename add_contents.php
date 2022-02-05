@@ -30,8 +30,8 @@ body {
  $fw = fopen($file, "a");
  fwrite($fw, $contents_name.",".$deadline_year.",".$deadline_month.",".$deadline_day.",".$memo."\n");
  fclose($fw);
- echo("\n".$contents_name."を".$file."に登録しました\n");
+ echo("\n".$contents_name."を登録しました\n");
 ?>
-<a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへGO！</a><br>
+<a href="http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/home_test2.php">ホームへ</a><br>
 </body>
 </html>
