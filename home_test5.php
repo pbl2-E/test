@@ -80,6 +80,9 @@
   </div>
   <font >ようこそ</font>
   <?php session_start();
+  function h($s){
+    return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+  }
   $f = file_get_contents("file_operator.txt");
   $line = explode("\n", $f);
   for($i = 0; $i < count($line); $i++){
@@ -140,7 +143,7 @@
             echo (
               /*"<font color=#008000><b>".($i+1). */
               "<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/ContentsPage2.php?file_name=$item[$i]'>");
-            echo htmlspecialchars($item_name);
+            echo h($item_name);
             echo("</a>");
             echo "</td>";
 
