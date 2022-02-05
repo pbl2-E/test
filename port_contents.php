@@ -106,7 +106,7 @@ echo($task_name);
     cursor: pointer;
 }
 </style>
-内容　：<input type="text" name="contents_name" class="task" size=15><br><br>
+内容　：<input type="text" name="contents_name" class="task" size=15　minlength="1" required><br><br>
 期限：<select name="deadline_year" class="deadline">
 <option>2021</option>
 <option>2022</option>
