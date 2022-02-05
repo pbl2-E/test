@@ -63,7 +63,7 @@ for($t = 1; $t < $count; $t++){
 list($con2[$t], $bad) = explode(",", $line[$t],2);
 }
 
-echo("<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/port_contents.php?file_name=$file_name'>追加</a>");
+echo("<a href='http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/port_contents.php?file_name=$file_name'>追加</a>");
 
 fclose($f);
 
