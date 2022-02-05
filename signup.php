@@ -47,10 +47,10 @@
         <br>
         <br>
         <font class="font2">ユーザー名</font><br>
-        <input type="textarea" name="address" placeholder="メールアドレス" required>
+        <input type="textarea" name="address" placeholder="メールアドレス" minlength="10" maxlength="50" required>
         <br>
         <font class="font2">パスワード</font><br>
-        <input type="password" name="password" placeholder="パスワード" required>
+        <input type="password" name="password" placeholder="パスワード" minlength="4" maxlength="50" required>
         <br>
         <br>
         <br>
