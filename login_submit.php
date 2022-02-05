@@ -14,7 +14,7 @@ echo '</script>';
 }
 
 function LoginError(){
-   echo "メールアドレスもしくはパスワードが違います<br />";
+   echo "メールアドレスもしくはパスワードが入力されていません<br />";
    echo "<a href=login.php>戻る</a>";
 }
 
