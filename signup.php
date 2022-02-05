@@ -9,7 +9,7 @@
   }
   function RegisterError(){
     if(document.form1.address.value=="" || document.form1.password.value==""){
-      alert("メールアドレスもしくはパスワードが違います。");
+      alert("メールアドレスもしくはパスワードが入力されていません。");
       return false;
     }
   }
