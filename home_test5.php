@@ -139,8 +139,9 @@
             echo "<td>";
             echo (
               /*"<font color=#008000><b>".($i+1). */
-              "<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/ContentsPage2.php?file_name=$item[$i]'>".$item_name.
-              "</a>");
+              "<a href='http://sshg.cs.ehime-u.ac.jp/~g428miyo/pbl2/ContentsPage2.php?file_name=$item[$i]'>");
+            echo htmlspecialchars($item_name);
+            echo("</a>");
             echo "</td>";
 
             $fw = file_get_contents($item[$i]);
