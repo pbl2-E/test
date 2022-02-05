@@ -10,9 +10,8 @@
     background-attachment: fixed;
   }
   .font1{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
-    padding-right: 110px;
   }
   .font2{
     font-size: 15px;
