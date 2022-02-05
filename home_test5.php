@@ -87,7 +87,8 @@
   }
   $ID = $_SESSION['ID'];
   list($user_name,$password) = explode(",",$ID,2);
-  echo($user_name."<br>");
+  echo htmlspecialchars($user_name);
+  echo("<br>");
   ?>
   <?php
   if($ID == null){
@@ -147,11 +148,17 @@
             list($task_name,$deadline_year,$deadline_month,$deadline_day,$memo) = explode(",",$task);
 
             echo "<td>";
-            echo '<font>',$deadline_year,'</font>';
+            echo '<font>';
+            echo htmlspecialchars($deadline_year);
+            echo'</font>';
             echo  ("/");
-            echo '<font>',$deadline_month,'</font>';
+            echo '<font>',
+            echo htmlspecialchars($deadline_month);
+            echo'</font>';
             echo  ("/");
-            echo '<font>',$deadline_day,'</font>';
+            echo '<font>',
+            echo htmlspecialchars($deadline_day);
+            echo'</font>';
             echo "</td>";
 
             if($memo != null){
