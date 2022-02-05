@@ -56,7 +56,7 @@ $line[$i2] = fgets($f);
 
 for($s = 1; $s < $count; $s++){
  echo $s;
-echo ($line[$s]."<button type=submit name=del value=$sd>削除</button><br>");
+echo ($line[$s]."<button type=submit name=del value=$s>削除</button><br>");
 }
 
 for($t = 1; $t < $count; $t++){
