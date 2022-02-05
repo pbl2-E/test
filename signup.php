@@ -59,7 +59,7 @@ body {
         <br>
         <br>
         <br>
-        <input type="button" value="戻る" onClick="history.back()">
+        <input type="button" value="戻る" onClick="location.href='login.php'">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="submit" value="登録" onClick="return RegisterCheck()">
       </div>
