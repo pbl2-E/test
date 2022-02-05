@@ -40,7 +40,9 @@ document.getElementById("heading").innerHTML = message + city[Math.floor(Math.ra
   //echo($id[$i]);
   //list($user_name,$user_pas) = explode(",",$ID);
   if($id[$i] == $ID){
-   echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/ContentsPage2.php?file_name=$item[$i]'>".$item_name."</a> : ");
+   echo ("<font color=#008000><b>".($i+1). " <a href='http://sshg.cs.ehime-u.ac.jp/~g475yama/pbl2/ContentsPage2.php?file_name=$item[$i]'>");
+   echo htmlspecialchars($item_name);
+   echo ("</a> : ");
   }
   $fw = file_get_contents($item[$i]);
   list($task, $con) = explode("\n", $fw, 2);
