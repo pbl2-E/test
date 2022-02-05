@@ -11,24 +11,14 @@
 <?php
 
 $task_name = $_GET['file_name'];
-//変更しました
 
-// 
 list($file_name,$trush) = explode("_",$task_name,2);
 echo ("<font size=5 color=#008000>".$file_name."</font>"."<br><br>");
 
 
 $count = count( file( $task_name ) );
-$fw = file_get_contents($task_name);
-list($task, $con) = explode("\n", $fw, 2);
-
-$f = fopen($task_name, "r");
-
-for($i2 = 0; $i2 < $count; $i2++){
-$line[$i2] = fgets($f);
- }
  
- //削除機能
+  //削除機能
  if(isset($_POST['del'])){
    //echo($file);
    
@@ -53,9 +43,18 @@ $line[$i2] = fgets($f);
  }
    fclose($fp);
  }
+ //ファイルをここで開くのでここより前に削除機能
+$fw = file_get_contents($task_name);
+list($task, $con) = explode("\n", $fw, 2);
+
+$f = fopen($task_name, "r");
+
+for($i2 = 0; $i2 < $count; $i2++){
+$line[$i2] = fgets($f);
+ }
+ 
 
 for($s = 1; $s < $count; $s++){
- echo $s;
 echo ($line[$s]."<button type=submit name=del value=$s>削除</button><br>");
 }
 
