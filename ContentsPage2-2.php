@@ -11,7 +11,9 @@
 <?php
 
 $task_name = $_GET['file_name'];
+//変更しました
 
+// 
 list($file_name,$trush) = explode("_",$task_name,2);
 echo ("<font size=5 color=#008000>".$file_name."</font>"."<br><br>");
 
@@ -53,6 +55,7 @@ $line[$i2] = fgets($f);
  }
 
 for($s = 1; $s < $count; $s++){
+ echo $s;
 echo ($line[$s]."<input type=submit value=削除><input type=hidden name=del value=$s><br>");
 }
 
