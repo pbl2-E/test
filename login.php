@@ -40,10 +40,10 @@
       <br>
       <form action="login_submit.php" method="POST">
         <font class="font2">ユーザー名</font><br>
-        <input type="text" name="email" value=""placeholder="メールアドレス">
+        <input type="text" name="email" value=""placeholder="メールアドレス" minlength="10" maxlength="50">
         <br>
         <font class="font2">パスワード</font><br>
-        <input type="password" name="password" value=""placeholder="パスワード">
+        <input type="password" name="password" value=""placeholder="パスワード" minlength="4" maxlength="50">
         <br>
         <br>
         <br>
