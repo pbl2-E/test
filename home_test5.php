@@ -170,7 +170,8 @@
             $ach = $_SESSION['ach'];
             if($ach == null){
               echo "<td>";
-              echo ("✓");
+              //echo ("✓");
+              echo("<a href=https://search.yahoo.co.jp/search?p=$task_name>調べちゃおう</a>");
               echo "</td>";
             }
             if($id[$i] == $ID){
